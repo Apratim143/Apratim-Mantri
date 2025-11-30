@@ -82,7 +82,7 @@ const App: React.FC = () => {
             
             <button 
               onClick={toggleTheme} 
-              className="p-2 rounded-full bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-nyc-cyan hover:text-brand-accent hover:bg-blue-50 dark:hover:bg-white/20 transition-all"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-nyc-cyan hover:text-brand-accent hover:bg-blue-50 dark:hover:bg-white/20 transition-all"
               aria-label="Toggle Dark Mode"
             >
               {darkMode ? <i className="fa-solid fa-sun text-lg"></i> : <i className="fa-solid fa-moon text-lg"></i>}
@@ -93,7 +93,7 @@ const App: React.FC = () => {
           <div className="lg:hidden flex items-center gap-4">
              <button 
               onClick={toggleTheme} 
-              className="p-2 rounded-full bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-nyc-cyan"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-nyc-cyan"
             >
               {darkMode ? <i className="fa-solid fa-sun text-lg"></i> : <i className="fa-solid fa-moon text-lg"></i>}
             </button>

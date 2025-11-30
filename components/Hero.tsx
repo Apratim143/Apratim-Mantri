@@ -113,7 +113,7 @@ export const Hero: React.FC = () => {
         <div className="flex-1 flex justify-center lg:justify-end w-full">
           <div className="relative flex flex-col items-center gap-8 group">
              {/* Neon Glow behind image in dark mode */}
-             <div className="absolute inset-0 bg-gradient-to-tr from-nyc-cyan to-nyc-purple rounded-full blur-xl opacity-0 dark:opacity-40 group-hover:opacity-60 transition-opacity duration-500 -z-10 h-[80%]"></div>
+             <div className="absolute inset-0 bg-gradient-to-tr from-nyc-cyan to-nyc-purple rounded-full blur-xl opacity-0 dark:opacity-40 dark:group-hover:opacity-60 transition-opacity duration-500 -z-10 h-[80%]"></div>
 
              {/* Image Container - Removed shadow in light mode for cleaner look */}
              <div className="relative w-[280px] h-[280px] md:w-[320px] md:h-[320px] lg:w-[380px] lg:h-[380px] rounded-full overflow-hidden dark:shadow-[0_0_30px_rgba(0,0,0,0.5)]">
