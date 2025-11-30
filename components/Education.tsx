@@ -12,8 +12,8 @@ export const Education: React.FC = () => {
         
         <div className="md:w-2/3 grid gap-8">
           {EDUCATION.map((edu) => (
-            <div key={edu.id} className="flex gap-6 p-6 rounded-2xl hover:bg-white dark:hover:bg-white/5 transition-colors duration-300 border border-transparent hover:border-gray-100 dark:hover:border-white/10 dark:hover:shadow-[0_0_20px_rgba(188,19,254,0.1)]">
-              <div className="mt-1 text-gray-300 dark:text-gray-600 group-hover:text-brand-accent dark:group-hover:text-nyc-purple text-3xl">
+            <div key={edu.id} className="group flex gap-6 p-6 rounded-2xl hover:bg-white dark:hover:bg-white/5 transition-colors duration-300 border border-transparent hover:border-gray-100 dark:hover:border-white/10 dark:hover:shadow-[0_0_20px_rgba(188,19,254,0.1)]">
+              <div className="mt-1 text-gray-400 dark:text-white group-hover:text-brand-accent dark:group-hover:text-blue-400 text-3xl transition-colors duration-300">
                 <i className="fa-solid fa-graduation-cap"></i>
               </div>
               <div>
