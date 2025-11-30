@@ -227,7 +227,7 @@ export const CERTIFICATIONS: Certification[] = [
   {
     id: "brand-chanakya-cert",
     title: "Digital Marketing",
-    issuer: "BRAND CHANAKYA",
+    issuer: "Brand Chanakya",
     date: "2020",
     image: "https://placehold.co/600x400/333333/white?text=Brand+Chanakya",
     credentialLink: "https://drive.google.com/file/d/13DuD9Nk-LaS35Ia-_Ih-XqDeUL_JO90z/view?usp=sharing"
