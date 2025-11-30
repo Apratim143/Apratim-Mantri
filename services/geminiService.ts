@@ -1,5 +1,6 @@
+
 import { GoogleGenAI } from "@google/genai";
-import { PERSONAL_INFO, EXPERIENCE, SKILLS, PROJECTS, EDUCATION } from '../constants';
+import { PERSONAL_INFO, EXPERIENCE, SKILLS, PROJECTS, EDUCATION, CERTIFICATIONS } from '../constants';
 
 // Construct the context from the resume data
 const RESUME_CONTEXT = `
@@ -39,6 +40,13 @@ ${EDUCATION.map(e => `
 - Degree: ${e.degree}
 - Period: ${e.period}
 ${e.details ? e.details.join('\n') : ''}
+`).join('\n')}
+
+CERTIFICATIONS:
+${CERTIFICATIONS.map(c => `
+- Name: ${c.title}
+- Issuer: ${c.issuer}
+- Date: ${c.date}
 `).join('\n')}
 `;
 

@@ -1,4 +1,5 @@
-import { Experience, Project, Education, SkillCategory, PersonalInfo } from './types';
+
+import { Experience, Project, Education, SkillCategory, PersonalInfo, Certification } from './types';
 
 export const PERSONAL_INFO: PersonalInfo = {
   name: "Apratim Mantri",
@@ -132,5 +133,111 @@ export const EDUCATION: Education[] = [
     details: [
       "CGPA: 6.57"
     ]
+  }
+];
+
+export const CERTIFICATIONS: Certification[] = [
+  // 2025
+  {
+    id: "mica-upgrad",
+    title: "Digital Marketing and Communication",
+    issuer: "MICA | upGrad",
+    date: "2025",
+    image: "https://placehold.co/600x400/D32F2F/white?text=MICA+%7C+upGrad",
+    credentialLink: "https://drive.google.com/file/d/1yk8hQvjDrgbmRp1zyLZZhGnGoPxCYQaX/view?usp=drive_link"
+  },
+  
+  // 2022
+  {
+    id: "iide-masterclass",
+    title: "Digital Marketing Fundamentals MasterClass",
+    issuer: "IIDE",
+    date: "2022",
+    image: "https://placehold.co/600x400/F97316/white?text=IIDE+Masterclass",
+    credentialLink: "https://drive.google.com/file/d/1ioAaVKSJ-c-iV4pyOep8OBXjViN-ekwj/view?usp=drive_link"
+  },
+  {
+    id: "meta-creator",
+    title: "Getting Started as a Creator",
+    issuer: "Meta (Facebook & Instagram)",
+    date: "2022",
+    image: "https://placehold.co/600x400/0668E1/white?text=Meta+Creator",
+    credentialLink: "https://drive.google.com/file/d/1BZXL8Et0JTLJadIDwqWJDRCBa6OpyiRW/view?usp=drive_link"
+  },
+  {
+    id: "google-ads-measurement",
+    title: "Google Ads - Measurement Certification",
+    issuer: "Google",
+    date: "2022",
+    image: "https://placehold.co/600x400/34A853/white?text=Measurement+Cert",
+    credentialLink: "https://drive.google.com/file/d/1vBsn4tP3kLDSuTV6cKBJa33bvhDRpRk-/view?usp=drive_link"
+  },
+  {
+    id: "google-ads-display",
+    title: "Google Ads Display Certification",
+    issuer: "Google",
+    date: "2022",
+    image: "https://placehold.co/600x400/FBBC04/black?text=Google+Ads+Display",
+    credentialLink: "https://drive.google.com/file/d/1n8BQomKKXbP05hyHjdku8d_M6RyE9a7d/view?usp=drive_link"
+  },
+  {
+    id: "google-ads-search",
+    title: "Google Ads Search Certification",
+    issuer: "Google",
+    date: "2022",
+    image: "https://placehold.co/600x400/4285F4/white?text=Google+Ads+Search",
+    credentialLink: "https://drive.google.com/file/d/1HgGMg_lW6FoQEIdkJ8T_hBJaJ3esLagg/view?usp=drive_link"
+  },
+  {
+    id: "google-ads-video",
+    title: "Google Ads Video Certification",
+    issuer: "Google",
+    date: "2022",
+    image: "https://placehold.co/600x400/EA4335/white?text=Google+Ads+Video",
+    credentialLink: "https://drive.google.com/file/d/183n9umu6Q1N3mrUsZM3DozEoPSY3an3x/view?usp=drive_link"
+  },
+
+  // 2021
+  {
+    id: "boi-creator",
+    title: "BOI Recognized Creator",
+    issuer: "Born on Instagram",
+    date: "2021",
+    image: "https://placehold.co/600x400/E1306C/white?text=Born+On+Instagram",
+    credentialLink: "https://drive.google.com/file/d/13K8a8hd_asH86lJVdfakfR4UlMNwdlJN/view?usp=sharing"
+  },
+  {
+    id: "ncfe-financial",
+    title: "Certificate of Basic Financial Education",
+    issuer: "National Centre for Financial Education",
+    date: "2021",
+    image: "https://placehold.co/600x400/10B981/white?text=NCFE",
+    credentialLink: "https://drive.google.com/file/d/1-8ZDtkag5rq9eRp9lBfbwMr_KUkArVm3/view?usp=drive_link"
+  },
+  {
+    id: "snipezine-cert",
+    title: "Digital Marketing",
+    issuer: "SnipeZine",
+    date: "2021",
+    image: "https://placehold.co/600x400/6B21A8/white?text=SnipeZine",
+    credentialLink: "https://drive.google.com/file/d/1njHQEH9TJEs0hRvTO7ux7dbDpycTW1a8/view?usp=drive_link"
+  },
+
+  // 2020
+  {
+    id: "brand-chanakya-cert",
+    title: "Digital Marketing",
+    issuer: "BRAND CHANAKYA",
+    date: "2020",
+    image: "https://placehold.co/600x400/333333/white?text=Brand+Chanakya",
+    credentialLink: "https://drive.google.com/file/d/13DuD9Nk-LaS35Ia-_Ih-XqDeUL_JO90z/view?usp=sharing"
+  },
+  {
+    id: "google-fundamentals",
+    title: "Fundamentals of Digital Marketing",
+    issuer: "Google Digital Unlocked",
+    date: "2020",
+    image: "https://placehold.co/600x400/4285F4/white?text=Digital+Unlocked",
+    credentialLink: "https://drive.google.com/file/d/1GkcNR9ADGuexwjzT_BP0sAPJS0KL_xt0/view?usp=drive_link"
   }
 ];

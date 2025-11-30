@@ -1,9 +1,11 @@
+
 import React, { useState, useEffect } from 'react';
 import { Hero } from './components/Hero';
 import { Skills } from './components/Skills';
 import { Experience } from './components/Experience';
 import { Projects } from './components/Projects';
 import { Education } from './components/Education';
+import { Certifications } from './components/Certifications';
 import { AIChat } from './components/AIChat';
 import { PERSONAL_INFO } from './constants';
 
@@ -50,6 +52,7 @@ const App: React.FC = () => {
     { name: 'Technical Expertise', href: '#skills' },
     { name: 'Experience', href: '#experience' },
     { name: 'Pro Bono Work', href: '#projects' },
+    { name: 'Certifications', href: '#certifications' },
     { name: 'Education', href: '#education' },
   ];
 
@@ -106,6 +109,7 @@ const App: React.FC = () => {
         <Skills />
         <Experience />
         <Projects />
+        <Certifications />
         <Education />
       </main>
 

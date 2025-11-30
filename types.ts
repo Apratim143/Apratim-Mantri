@@ -1,3 +1,4 @@
+
 export interface Experience {
   id: string;
   company: string;
@@ -21,6 +22,15 @@ export interface Education {
   degree: string;
   period: string;
   details?: string[];
+}
+
+export interface Certification {
+  id: string;
+  title: string;
+  issuer: string;
+  date: string;
+  image?: string;
+  credentialLink?: string;
 }
 
 export interface SkillCategory {
