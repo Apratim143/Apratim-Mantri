@@ -143,7 +143,7 @@ export const Hero: React.FC = () => {
                 "
               >
                 <i className="fa-solid fa-download"></i>
-                Download My Resume
+                Download My Portfolio
               </a>
           </div>
         </div>
