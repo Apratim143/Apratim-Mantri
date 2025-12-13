@@ -8,10 +8,10 @@ export const Experience: React.FC = () => {
         
         {/* Sticky Header */}
         <div className="lg:w-1/3 lg:sticky lg:top-32">
-          <h2 className="text-4xl font-serif font-medium mb-4 text-gray-900 dark:text-white">Experience</h2>
+          <h2 className="text-4xl font-serif font-medium mb-4 text-gray-900 dark:text-white">Professional Experience</h2>
           <div className="h-1.5 w-24 bg-brand-accent dark:bg-blue-500 shadow-[0_0_10px_rgba(37,99,235,0.5)] dark:shadow-[0_0_15px_rgba(59,130,246,0.6)] mb-6"></div>
           <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed">
-            A chronological overview of my professional journey in digital marketing, highlighting key roles and impact.
+            A track record of delivering results across industries.
           </p>
         </div>
 

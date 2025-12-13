@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Hero } from './components/Hero';
 import { Skills } from './components/Skills';
@@ -49,9 +48,9 @@ const App: React.FC = () => {
 
   const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'Technical Expertise', href: '#skills' },
+    { name: 'Strategic Capabilities', href: '#skills' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Pro Bono Work', href: '#projects' },
+    { name: 'Selected Work', href: '#projects' },
     { name: 'Certifications', href: '#certifications' },
     { name: 'Education', href: '#education' },
   ];

@@ -71,8 +71,8 @@ export const Hero: React.FC = () => {
         
         {/* Left Text Content */}
         <div className="flex-1 text-center lg:text-left w-full">
-          <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 border border-blue-200 dark:border-blue-400/30 bg-blue-50 dark:bg-blue-500/10 rounded-full text-xs font-bold tracking-wider uppercase text-blue-700 dark:text-blue-400 backdrop-blur-md">
-            <span className="w-2 h-2 rounded-full bg-blue-600 dark:bg-blue-400 animate-pulse"></span>
+          <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 border border-green-200 dark:border-green-500/30 bg-green-50 dark:bg-green-500/10 rounded-full text-xs font-bold tracking-wider uppercase text-green-700 dark:text-green-400 backdrop-blur-md">
+            <span className="w-2 h-2 rounded-full bg-green-600 dark:bg-green-400 animate-pulse"></span>
             Available for Work
           </div>
           
