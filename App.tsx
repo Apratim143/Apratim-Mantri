@@ -10,12 +10,21 @@ import { PERSONAL_INFO } from './constants';
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     // Check system preference on mount
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
       setDarkMode(true);
     }
+
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
@@ -34,8 +43,7 @@ const App: React.FC = () => {
     const element = document.getElementById(targetId);
     
     if (element) {
-      // Header height is h-20 (5rem/80px). We add 20px extra padding for breathing room.
-      const headerOffset = 100; 
+      const headerOffset = 100;
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.scrollY - headerOffset;
 
@@ -48,35 +56,30 @@ const App: React.FC = () => {
 
   const navLinks = [
     { name: 'Home', href: '#home' },
-    { name: 'Strategic Capabilities', href: '#skills' },
+    { name: 'Work', href: '#projects' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Selected Work', href: '#projects' },
-    { name: 'Certifications', href: '#certifications' },
-    { name: 'Education', href: '#education' },
+    { name: 'Contact', href: `mailto:${PERSONAL_INFO.contact.email}` },
   ];
 
   return (
-    <div className="min-h-screen bg-transparent text-brand-black dark:text-white selection:bg-nyc-cyan selection:text-black transition-colors duration-300">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 dark:bg-black/60 backdrop-blur-xl border-b border-gray-100 dark:border-white/10 transition-all duration-300">
-        <div className="px-6 md:px-12 h-20 flex items-center justify-between max-w-7xl mx-auto">
-          {/* Logo */}
+    <div className="min-h-screen bg-transparent text-brand-black dark:text-white selection:bg-brand-accent/30 selection:text-brand-accent transition-colors duration-300">
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 dark:bg-[#050510]/90 backdrop-blur-md py-4 shadow-sm' : 'bg-transparent py-6'}`}>
+        <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 flex items-center justify-between">
           <a 
             href="#home" 
             onClick={(e) => handleNavClick(e, '#home')}
-            className="text-xl md:text-2xl font-serif font-bold tracking-tight text-gray-900 dark:text-white hover:text-brand-accent dark:hover:text-nyc-cyan transition-colors"
+            className="text-2xl font-serif font-bold tracking-tight text-gray-900 dark:text-white"
           >
             Apratim Mantri
           </a>
 
-          {/* Desktop Nav */}
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a 
                 key={link.name} 
                 href={link.href} 
-                onClick={(e) => handleNavClick(e, link.href)}
-                className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-brand-accent dark:hover:text-nyc-cyan transition-colors uppercase tracking-wide"
+                onClick={link.href.startsWith('#') ? (e) => handleNavClick(e, link.href) : undefined}
+                className="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-brand-accent dark:hover:text-white transition-colors uppercase tracking-wider"
               >
                 {link.name}
               </a>
@@ -84,26 +87,49 @@ const App: React.FC = () => {
             
             <button 
               onClick={toggleTheme} 
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-nyc-cyan hover:text-brand-accent hover:bg-blue-50 dark:hover:bg-white/20 transition-all"
+              className="ml-4 w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-white hover:bg-brand-accent hover:text-white transition-colors"
               aria-label="Toggle Dark Mode"
             >
-              {darkMode ? <i className="fa-solid fa-sun text-lg"></i> : <i className="fa-solid fa-moon text-lg"></i>}
+              {darkMode ? <i className="fa-solid fa-sun"></i> : <i className="fa-solid fa-moon"></i>}
             </button>
           </div>
 
-          {/* Mobile Header Controls (Theme Toggle Only - No Nav) */}
-          <div className="lg:hidden flex items-center gap-4">
-             <button 
+          <div className="md:hidden flex items-center gap-4">
+            <button 
               onClick={toggleTheme} 
-              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-nyc-cyan"
+              className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-white"
             >
-              {darkMode ? <i className="fa-solid fa-sun text-lg"></i> : <i className="fa-solid fa-moon text-lg"></i>}
+              {darkMode ? <i className="fa-solid fa-sun"></i> : <i className="fa-solid fa-moon"></i>}
+            </button>
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-gray-900 dark:text-white text-2xl focus:outline-none"
+            >
+              {mobileMenuOpen ? <i className="fa-solid fa-xmark"></i> : <i className="fa-solid fa-bars"></i>}
             </button>
           </div>
         </div>
+
+        {mobileMenuOpen && (
+          <div className="md:hidden absolute top-full left-0 w-full bg-white dark:bg-[#1a1a2e] border-b border-gray-100 dark:border-white/10 shadow-xl py-4 px-6 flex flex-col gap-4 animate-slide-up-fade">
+            {navLinks.map((link) => (
+              <a 
+                key={link.name} 
+                href={link.href}
+                onClick={(e) => {
+                  setMobileMenuOpen(false);
+                  if (link.href.startsWith('#')) handleNavClick(e, link.href);
+                }} 
+                className="text-lg font-medium text-gray-900 dark:text-white py-2 border-b border-gray-100 dark:border-white/5"
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
+        )}
       </nav>
 
-      <main className="pt-20">
+      <main>
         <Hero />
         <Skills />
         <Experience />
@@ -113,21 +139,20 @@ const App: React.FC = () => {
       </main>
 
       <footer className="bg-white dark:bg-transparent text-gray-900 dark:text-white py-20 px-6 md:px-12 lg:px-24 border-t border-gray-200 dark:border-white/10 relative overflow-hidden transition-colors duration-300 backdrop-blur-sm">
-        {/* Decorative background element for footer */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-accent/5 dark:bg-nyc-purple/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-blue-500/5 dark:bg-nyc-cyan/10 rounded-full blur-3xl -ml-20 -mb-20 pointer-events-none"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-brand-accent/5 dark:bg-blue-600/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-blue-500/5 dark:bg-purple-600/10 rounded-full blur-3xl -ml-20 -mb-20 pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto relative z-10">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-16">
              <h2 className="text-4xl md:text-5xl font-serif font-medium mb-8 md:mb-0">
               Let's build something<br/>
-              <span className="text-brand-accent dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-nyc-cyan dark:to-nyc-purple">great together.</span>
+              <span className="text-brand-accent dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-r dark:from-blue-400 dark:to-blue-600">great together.</span>
             </h2>
             <div className="flex flex-col gap-4">
-               <a href={`mailto:${PERSONAL_INFO.contact.email}`} className="text-xl md:text-2xl hover:text-brand-accent dark:hover:text-nyc-cyan transition-colors flex items-center gap-3 group">
+               <a href={`mailto:${PERSONAL_INFO.contact.email}`} className="text-xl md:text-2xl hover:text-brand-accent dark:hover:text-blue-400 transition-colors flex items-center gap-3 group">
                 {PERSONAL_INFO.contact.email}
               </a>
-              <a href={`tel:${PERSONAL_INFO.contact.phone}`} className="text-lg md:text-xl text-gray-500 dark:text-gray-400 hover:text-brand-accent dark:hover:text-nyc-cyan transition-colors">
+              <a href={`tel:${PERSONAL_INFO.contact.phone}`} className="text-lg md:text-xl text-gray-500 dark:text-gray-400 hover:text-brand-accent dark:hover:text-blue-400 transition-colors">
                 {PERSONAL_INFO.contact.phone}
               </a>
             </div>
@@ -142,7 +167,7 @@ const App: React.FC = () => {
                  href={`https://linkedin.com/in/${PERSONAL_INFO.contact.linkedin}`} 
                  target="_blank" 
                  rel="noopener noreferrer"
-                 className="flex items-center gap-2 hover:text-brand-accent dark:hover:text-nyc-cyan cursor-pointer transition-colors"
+                 className="flex items-center gap-2 hover:text-brand-accent dark:hover:text-blue-400 cursor-pointer transition-colors"
                >
                  <i className="fa-brands fa-linkedin text-lg"></i> LinkedIn
                </a>
@@ -151,7 +176,6 @@ const App: React.FC = () => {
         </div>
       </footer>
 
-      {/* Gemini Powered Chat */}
       <AIChat />
     </div>
   );
