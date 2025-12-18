@@ -14,8 +14,8 @@ export const Hero: React.FC = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [imgError, setImgError] = useState(false);
   
-  // Using stable LinkedIn URL
-  const PROFILE_IMAGE_URL = "https://media.licdn.com/dms/image/v2/D4D03AQGGDBPIpziIDQ/profile-displayphoto-scale_400_400/B4DZpJbf1kJEAk-/0/1762168538161?e=1766016000&v=beta&t=o4hI97aDO5pKwp1O5r4ZUWIw2U_k9-vW80Vz3GK5bPU";
+  // Using image from constants
+  const PROFILE_IMAGE_URL = PERSONAL_INFO.image;
   
   useEffect(() => {
     const currentString = TYPING_STRINGS[textIndex];
@@ -127,7 +127,7 @@ export const Hero: React.FC = () => {
                   />
                ) : (
                   <div className="w-full h-full bg-gray-200 dark:bg-gray-800 flex items-center justify-center text-4xl text-gray-400">
-                    AM
+                    Apratim Mantri
                   </div>
                )}
              </div>

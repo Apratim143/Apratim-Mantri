@@ -42,6 +42,7 @@ export interface SkillCategory {
 export interface PersonalInfo {
   name: string;
   title: string;
+  image: string;
   contact: {
     phone: string;
     email: string;

@@ -4,6 +4,7 @@ import { Experience, Project, Education, SkillCategory, PersonalInfo, Certificat
 export const PERSONAL_INFO: PersonalInfo = {
   name: "Apratim Mantri",
   title: "Digital Marketer",
+  image: "https://media.licdn.com/dms/image/v2/D4D03AQGGDBPIpziIDQ/profile-displayphoto-scale_400_400/B4DZpJbf1kJEAk-/0/1762168538161?e=1767830400&v=beta&t=IeJ8OvA8NBNEFT0WT53gci7mk3dYkh7TAfXZhNqJgOw",
   contact: {
     phone: "+91 7073714909",
     email: "apratim.workspace@gmail.com",
@@ -31,7 +32,7 @@ export const SKILLS: SkillCategory[] = [
   {
     category: "Design Tools",
     icon: "fa-solid fa-pen-nib",
-    skills: ["Canva", "VistaCreate", "Adobe Spark", "Veed"]
+    skills: ["Canva", "VistaCreate", "Adobe Spark", "Veed", "Flair.ai"]
   },
   {
     category: "Web & CMS",
