@@ -145,6 +145,22 @@ export const EDUCATION: Education[] = [
 export const CERTIFICATIONS: Certification[] = [
   // 2025
   {
+    id: "skill-india-digital-marketing",
+    title: "Digital Marketing (140 Hours) - Skill India Digital Hub",
+    issuer: "Reliance Foundation & NSDC",
+    date: "2025",
+    image: "https://placehold.co/600x400/0b415b/white?text=Skill+India+Digital",
+    credentialLink: "https://drive.google.com/file/d/1YtrEasHBhEHqC442DXVFwEAH9m6-R7yS/view?usp=sharing"
+  },
+  {
+    id: "reliance-digital-marketing",
+    title: "Certificate Course in Digital Marketing",
+    issuer: "Reliance Foundation & NSDC",
+    date: "2025",
+    image: "https://placehold.co/600x400/004b23/white?text=Reliance+Foundation",
+    credentialLink: "https://drive.google.com/file/d/1H_UbRoXgZ1aGX3DbZDSH8I9p6NkOVrnb/view?usp=sharing"
+  },
+  {
     id: "linkedin-marketing-strategy",
     title: "LinkedIn Marketing Strategy Certification",
     issuer: "LinkedIn",
