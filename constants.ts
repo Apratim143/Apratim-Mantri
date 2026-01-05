@@ -143,6 +143,15 @@ export const EDUCATION: Education[] = [
 ];
 
 export const CERTIFICATIONS: Certification[] = [
+  // 2026
+  {
+    id: "linkedin-marketing-measurement",
+    title: "LinkedIn Marketing Measurement Certification",
+    issuer: "LinkedIn",
+    date: "2026 - 2028",
+    image: "https://placehold.co/600x400/0077B5/white?text=LinkedIn+Measurement",
+    credentialLink: "https://drive.google.com/file/d/1MMPQvtYObtR9ixJ7yPP5f8F7ODfLmMye/view?usp=sharing"
+  },
   // 2025
   {
     id: "skill-india-digital-marketing",
