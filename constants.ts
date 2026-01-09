@@ -1,10 +1,9 @@
-
 import { Experience, Project, Education, SkillCategory, PersonalInfo, Certification } from './types';
 
 export const PERSONAL_INFO: PersonalInfo = {
   name: "Apratim Mantri",
   title: "Digital Marketer",
-  image: "https://media.licdn.com/dms/image/v2/D4D03AQGGDBPIpziIDQ/profile-displayphoto-scale_400_400/B4DZpJbf1kJEAk-/0/1762168538161?e=1767830400&v=beta&t=IeJ8OvA8NBNEFT0WT53gci7mk3dYkh7TAfXZhNqJgOw",
+  image: "https://media.licdn.com/dms/image/v2/D4D03AQGGDBPIpziIDQ/profile-displayphoto-crop_800_800/B4DZpJbf1kJEAM-/0/1762168538067?e=1769644800&v=beta&t=COYuSo0aHJtaIOd2c_ffL783qFFgrfUvCu5wxkFxkOk",
   contact: {
     phone: "+91 7073714909",
     email: "apratim.workspace@gmail.com",
@@ -167,7 +166,7 @@ export const CERTIFICATIONS: Certification[] = [
     issuer: "Reliance Foundation & NSDC",
     date: "2025",
     image: "https://placehold.co/600x400/004b23/white?text=Reliance+Foundation",
-    credentialLink: "https://drive.google.com/file/d/1H_UbRoXgZ1aGX3DbZDSH8I9p6NkOVrnb/view?usp=sharing"
+    credentialLink: "https://drive.google.com/file/d/1H_UbRoXgZ1aGX3DbZDSH8I9p6NkOVrnb/view?usp=drive_link"
   },
   {
     id: "linkedin-marketing-strategy",
