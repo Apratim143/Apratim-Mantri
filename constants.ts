@@ -3,7 +3,7 @@ import { Experience, Project, Education, SkillCategory, PersonalInfo, Certificat
 export const PERSONAL_INFO: PersonalInfo = {
   name: "Apratim Mantri",
   title: "Digital Marketer",
-  image: "https://image2url.com/r2/default/images/1770051160321-2a92cd55-29bb-476b-ae28-fe0521a28235.png ",
+  image: "https://image2url.com/r2/default/images/1770051160321-2a92cd55-29bb-476b-ae28-fe0521a28235.png" alt="Apratim Mantri" loading="lazy",
   contact: {
     phone: "+91 7073714909",
     email: "apratim.workspace@gmail.com",
